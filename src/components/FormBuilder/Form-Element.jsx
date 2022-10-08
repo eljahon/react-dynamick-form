@@ -21,6 +21,23 @@ function getStyles(errors, touches) {
              color: 'red'
         };
       } 
+  };
+  export function File (props) {
+    const { name, type,error,touch, label, placeholder, ...rest } = props;
+    return (
+        <div style={{marginTop: '10px'}}>
+          {label && <label style={checkLabel(error, touch)} htmlFor={name}>{label}</label>}
+          <input
+            className="form-controle"
+            style={getStyles(error, touch)}
+            type={type}
+            id={name}
+            name={name}
+            placeholder={placeholder || ""}
+            {...rest}
+          />
+        </div>
+      );
   }
 export function TextFeild(props) {
     // console.log(props, '===>>');

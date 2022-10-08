@@ -34,6 +34,20 @@ function App() {
             validationsType: 'string',
         },
         {
+            name: 'file',
+            type: 'file',
+            label: 'File',
+            required: true,
+            validationsType: 'string',
+        },
+        {
+            name: 'checkbox',
+            type: 'checkbox',
+            label: 'checkbox',
+            required: true,
+            validationsType: 'string',
+        },
+        {
             name: 'user',
             type: 'select',
             label: 'User',

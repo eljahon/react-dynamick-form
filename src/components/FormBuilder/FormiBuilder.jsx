@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Formik, Form } from "formik";
-import { TextFeild, SelectField } from "./Form-Element";
+import { TextFeild, SelectField, File } from "./Form-Element";
 import * as Yup from "yup";
 
 
@@ -13,8 +13,8 @@ const FormBuilder = (props) => {
       input: TextFeild,
       email: TextFeild,
       password: TextFeild,
-      file: TextFeild,
-      chexbox: TextFeild,
+      file: File,
+      checkbox: File,
       "": TextFeild,
     };
     let _itemComponent = componentList[type];
