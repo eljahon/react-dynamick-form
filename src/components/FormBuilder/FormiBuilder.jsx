@@ -65,7 +65,6 @@ const FormBuilder = (props) => {
                   {errors[el.name] && touched[el.name] ? (
                     <div style={{color: 'red'}}>{errors[el.name]}</div>
                   ) : null}
-                  <br/>
                 </div>
               ))}
               {props.children}

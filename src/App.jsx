@@ -21,22 +21,22 @@ function App() {
     const feilds = [{
         name: 'email',
         type: 'input',
-        label: 'email',
+        label: 'Email',
         required: true,
         validationsType: 'string',
-        value: null,
+        value: 'dasd',
     },
         {
             name: 'password',
             type: 'input',
-            label: 'password',
+            label: 'Password',
             required: true,
             validationsType: 'string',
         },
         {
             name: 'user',
             type: 'select',
-            label: 'user',
+            label: 'User',
             required: true,
             options: [{
                 value: 'name',
@@ -47,9 +47,11 @@ function App() {
     ]
   return (
     <div className="App">
+        <div style={{width: '60%', margin: 'auto'}}>
         <FormiBuilder feilds={feilds} onSubmit={onSubmit} title={'Siginin'}>
-            <button type='submit'>Submit</button>
+            <button style={{marginTop: '10px'}} type='submit'>Submit</button>
             </FormiBuilder>
+        </div>
     </div>
   );
 }

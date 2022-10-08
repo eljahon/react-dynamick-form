@@ -3,16 +3,31 @@ function getStyles(errors, touches) {
     if (errors && touches) {
       return {
         border: "1px solid red",
+        width: '100%',
+            padding: '5px',
+            outline: 'none'
       };
+    } else{
+        return {
+            width: '100%',
+            padding: '5px',
+            outline: 'none'
+        }
     }
+  }
+  function checkLabel (errors, touches) {
+    if (errors && touches) {
+        return {
+             color: 'red'
+        };
+      } 
   }
 export function TextFeild(props) {
     // console.log(props, '===>>');
   const { name, type,error,touch, label, placeholder, ...rest } = props;
   return (
-    <>
-      {label && <label htmlFor={name}>{label}</label>}
-      <br/>
+    <div style={{marginTop: '10px'}}>
+      {label && <label style={checkLabel(error, touch)} htmlFor={name}>{label}</label>}
       <Field
         className="form-controle"
         style={getStyles(error, touch)}
@@ -22,15 +37,15 @@ export function TextFeild(props) {
         placeholder={placeholder || ""}
         {...rest}
       ></Field>
-    </>
+    </div>
   );
 }
 
 export function SelectField(props) {
   const { name, type, error, touch, label, placeholder, options, ...rest } = props;
   return (
-    <>
-      {label && <label htmlFor={name}>{label}</label>}
+    <div style={{marginTop: '10px'}}>
+      {label && <label style={checkLabel(error, touch)} htmlFor={name}>{label}</label>}
       <br/>
       <Field
         as={type}
@@ -47,6 +62,6 @@ export function SelectField(props) {
             <option key={index} value={op.value} label={op.value || op.label} />
           ))}
       </Field>
-    </>
+    </div>
   );
 }
