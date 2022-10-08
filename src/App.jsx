@@ -1,7 +1,7 @@
 
 import {useState} from "react";
 import SignupForm from "./components/registration";
-import FormiBuilder from './components/FormBuilder/FormiBuilder'
+import FormiBuilder from './components/FormBuilder/FormBuilder'
 function App() {
     const saveUser = async (data) => {
     const res = await fetch('http://localhost:5000/api/auth/registration', {

@@ -3,10 +3,9 @@ import { Formik, Form } from "formik";
 import { TextFeild, SelectField, File } from "./Form-Element";
 import * as Yup from "yup";
 
-
 const FormBuilder = (props) => {
   const { feilds, title, onSubmit } = props;
-  const Element = (type, props, err,touch) => {
+  const Element = (type, props, err, touch) => {
     // console.log(type, "===>>");
     let componentList = {
       select: SelectField,
@@ -54,16 +53,18 @@ const FormBuilder = (props) => {
           validationSchema={Yup.object().shape(validateSchema ?? {})}
           onSubmit={(values) => {
             console.log(values);
-              onSubmit(values);
+            onSubmit(values);
           }}
         >
           {({ errors, touched }) => (
             <Form>
               {elmProps.map((el, key) => (
                 <div key={key}>
-                  <div>{Element(el.type, el, errors[el.name], touched[el.name])}</div>
+                  <div>
+                    {Element(el.type, el, errors[el.name], touched[el.name])}
+                  </div>
                   {errors[el.name] && touched[el.name] ? (
-                    <div style={{color: 'red'}}>{errors[el.name]}</div>
+                    <div style={{ color: "red" }}>{errors[el.name]}</div>
                   ) : null}
                 </div>
               ))}
